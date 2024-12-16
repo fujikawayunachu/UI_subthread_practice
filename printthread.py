@@ -26,7 +26,8 @@ def countdown():
         doubled_number = double_number(random_number)
         print(f"{threading.current_thread().name}: count={count}, random_number={random_number}, doubled_number={doubled_number}")
         # メインスレッドでUIを更新
-        root.after(0, update_ui)
+        # root.after(0, update_ui)
+        update_ui()
         threading.Event().wait(1)
     button_1['state'] = tk.NORMAL
     print(f"{threading.current_thread().name}: Countdown finished")
